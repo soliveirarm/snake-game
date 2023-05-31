@@ -34,15 +34,16 @@ body {
 
 @keyframes colors {
   0% {
-    color: hsl(248, 100%, 70%);
+    color: #192a52;
     transform: scale(1);
   }
   50% {
-    color: hsl(248, 100%, 60%);
+    color: hsl(180, 83%, 50%);
+
     transform: scale(1.02);
   }
   100% {
-    color: hsl(248, 100%, 70%);
+    color: #192a52;
     transform: scale(1);
   }
 }

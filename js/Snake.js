@@ -8,7 +8,7 @@ class Snake {
   }
 
   draw(ctx) {
-    ctx.fillStyle = "#fada06";
+    ctx.fillStyle = "#6ff2f2";
     ctx.fillRect(this.x, this.y, boxSize, boxSize);
   }
 

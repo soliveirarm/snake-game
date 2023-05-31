@@ -20,18 +20,33 @@ function updateFood() {
 
 function loop() {
   // pintando o canvas
-  ctx.fillStyle = "hsl(248, 100%, 70%)";
+  ctx.fillStyle = "#192a53";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+  // ação que ocorre quando a cobra fica na mesma posição que a comida
   if (snake.x == food.x && snake.y == food.y) {
     updateFood();
     updateScore();
+    snake.body.push([snake.x, snake.y]);
   }
+
+  for (let i = snake.body.length - 1; i > 0; i--) {
+    snake.body[i] = snake.body[i - 1];
+  }
+
+  if (snake.body.length) {
+    snake.body[0] = [snake.x, snake.y];
+  }
+
   // desenhando o personagem num local fixo
   snake.x += snake.speedX * boxSize;
   snake.y += snake.speedY * boxSize;
   food.drawSprite(ctx);
   snake.draw(ctx);
+
+  for (let i = 0; i < snake.body.length; i++) {
+    ctx.fillRect(snake.body[i][0], snake.body[i][1], boxSize, boxSize);
+  }
 }
 
 document.addEventListener("keyup", (e) => {
