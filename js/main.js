@@ -79,10 +79,12 @@ function updateScore() {
 let interval = setInterval(loop, 90);
 
 const restartBtn = document.querySelector("#restart");
+let isGameOver = false;
 
 function gameOver() {
   restartBtn.classList.toggle("show");
   clearInterval(interval);
+  isGameOver = true;
 }
 
 function restart() {
@@ -90,7 +92,7 @@ function restart() {
 }
 
 document.addEventListener("keypress", (e) => {
-  if (e.key === "r") {
+  if (e.key === "r" && isGameOver == true) {
     restart();
   }
 });
