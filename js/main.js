@@ -46,6 +46,20 @@ function loop() {
 
   for (let i = 0; i < snake.body.length; i++) {
     ctx.fillRect(snake.body[i][0], snake.body[i][1], boxSize, boxSize);
+
+    // se a cabeça da cobra e alguma parte do corpo estiverem na mesma posição, o jogo acaba
+    if (snake.x == snake.body[i][0] && snake.y == snake.body[i][1]) {
+      gameOver();
+    }
+  }
+
+  if (
+    snake.x < 0 ||
+    snake.y < 0 ||
+    snake.x > squareSize * boxSize ||
+    snake.y > squareSize * boxSize
+  ) {
+    gameOver();
   }
 }
 
@@ -61,5 +75,22 @@ function updateScore() {
   score.innerText = scoreCount;
 }
 
-// A função fica rodando em loop a cada 100 milisegundos
-setInterval(loop, 90);
+// A função fica rodando em loop a cada 90 milisegundos
+let interval = setInterval(loop, 90);
+
+const restartBtn = document.querySelector("#restart");
+
+function gameOver() {
+  restartBtn.classList.toggle("show");
+  clearInterval(interval);
+}
+
+function restart() {
+  window.location.reload();
+}
+
+document.addEventListener("keypress", (e) => {
+  if (e.key === "r") {
+    restart();
+  }
+});
