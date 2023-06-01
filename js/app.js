@@ -67,6 +67,10 @@ document.addEventListener("keyup", (e) => {
   snake.move(e);
 });
 
+document.addEventListener("keydown", (e) => {
+  snake.move(e);
+});
+
 let score = document.querySelector("#score");
 let scoreCount = 0;
 

@@ -27,6 +27,10 @@ body {
   font-family: "Silkscreen", cursive;
 }
 
+#score {
+  color: hsl(180, 83%, 45%);
+}
+
 #canvas {
   border-radius: 10px;
   animation: 4s border infinite;
@@ -34,7 +38,7 @@ body {
 
 #restart {
   font-family: "Silkscreen", cursive;
-  font-size: 2.5 rem;
+  font-size: 2.5rem;
   display: none;
   position: absolute;
   padding: 2rem 4rem;
