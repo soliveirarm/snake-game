@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Silkscreen", cursive;
 }
 
 body {
@@ -14,7 +15,6 @@ body {
 
 .title {
   font-size: 3.5rem;
-  font-family: "Silkscreen", cursive;
   user-select: none;
   padding: 2rem;
   color: #fafafa;
@@ -24,11 +24,14 @@ body {
 .score {
   text-align: center;
   font-size: 2rem;
-  font-family: "Silkscreen", cursive;
 }
 
-#score {
+#score,
+.dev a {
   color: hsl(180, 83%, 45%);
+}
+.dev a:hover {
+  color: hsl(180, 83%, 35%);
 }
 
 #canvas {
@@ -37,12 +40,12 @@ body {
 }
 
 #restart {
-  font-family: "Silkscreen", cursive;
-  font-size: 2.5rem;
   display: none;
   position: absolute;
-  padding: 2rem 4rem;
+  top: 40%;
+  font-size: 2rem;
   color: #e3f2fc;
+  padding: 2rem 4rem;
 }
 
 #restart.show {

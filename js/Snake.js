@@ -15,16 +15,16 @@ class Snake {
   move(e) {
     let pressedKey = e.key;
 
-    if (pressedKey === "w" && this.speedY != 1 && this.speedY != 1) {
+    if (pressedKey === "ArrowUp" && this.speedY != 1) {
       this.speedX = 0;
       this.speedY = -1;
-    } else if (pressedKey === "s" && this.speedY != -1) {
+    } else if (pressedKey === "ArrowDown" && this.speedY != -1) {
       this.speedX = 0;
       this.speedY = 1;
-    } else if (pressedKey === "a" && this.speedX != 1) {
+    } else if (pressedKey === "ArrowLeft" && this.speedX != 1) {
       this.speedX = -1;
       this.speedY = 0;
-    } else if (pressedKey === "d" && this.speedX != -1) {
+    } else if (pressedKey === "ArrowRight" && this.speedX != -1) {
       this.speedX = 1;
       this.speedY = 0;
     }
