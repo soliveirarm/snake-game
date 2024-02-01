@@ -1,3 +1,3 @@
 # Snake Game
 
-- Trabalho (3º semsestre) - Programação de Sítios de Internet
+- Trabalho (3º semestre) - Programação de Sítios de Internet
